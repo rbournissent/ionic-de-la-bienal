@@ -2,7 +2,8 @@
     <ion-content padding="true" class="has-header">
         <ion-list id="contactos-list4">
             <ion-item class="item-thumbnail-left"
-                      ng-repeat="contact in contacts | orderBy: 'name'">
+                      ng-repeat="contact in contacts | orderBy: 'name'"
+                      ui-sref="tabsController.contacto({name: contact.name})">
               <img ng-src="{{ contact.avatar_url }}" />
               <h2>{{ contact.name }}</h2>
               <p>Última vez conectado:

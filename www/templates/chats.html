@@ -2,7 +2,8 @@
     <ion-content padding="true" class="has-header">
         <ion-list id="chats-list3">
             <ion-item class="item-avatar"
-                      ng-repeat="conversation in conversations | orderBy: '-last_message'">
+                      ng-repeat="conversation in conversations | orderBy: '-last_message'"
+                      ui-sref="tabsController.chat({name: conversation.name})">
               <img ng-src="{{ conversation.avatar_url }}" />
               <h2 ng-class="{ 'balanced': conversation.connected && !conversation.writing, 'positive': conversation.connected && conversation.writing, 'assertive': !conversation.connected }">
                 {{ conversation.name }}

@@ -41,11 +41,11 @@ angular.module('app.controllers', [])
   }];
 })
 
-.controller('juanDetallesCtrl', function($scope) {
+.controller('chatCtrl', function($scope) {
 
 })
 
-.controller('juanConversaciNCtrl', function($scope) {
+.controller('contactoCtrl', function($scope) {
 
 })
 
