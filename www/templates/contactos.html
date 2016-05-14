@@ -1,13 +1,14 @@
-<ion-view title="Contactos" id="page6" class=" ">
+<ion-view title="Contactos" id="page6">
     <ion-content padding="true" class="has-header">
-        <ion-list id="contactos-list4" class=" ">
-            <ion-item class="item-thumbnail-left  " id="contactos-list-item15" ui-sref="tabsController.juanDetalles">
-                <h2>Juan</h2>
-                <p style="white-space:normal;">Última vez conectado: ahora</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left  " id="contactos-list-item16" ui-sref="tabsController.juanDetalles">
-                <h2>Lucía</h2>
-                <p style="white-space:normal;">Última vez conectado: Martes 10 de mayo</p>
+        <ion-list id="contactos-list4">
+            <ion-item class="item-thumbnail-left"
+                      ng-repeat="contact in contacts | orderBy: 'name'">
+              <img ng-src="{{ contact.avatar_url }}" />
+              <h2>{{ contact.name }}</h2>
+              <p>Última vez conectado:
+                <span ng-show="contact.connected">ahora</span>
+                <span ng-hide="contact.connected">{{ contact.last_connection | date:'medium':'-0300' }}</span>
+              </p>
             </ion-item>
         </ion-list>
     </ion-content>
